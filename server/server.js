@@ -1,11 +1,11 @@
 //server/server.js
-var express = require('express');
-var Routes = require('./routes/routes.js');
-var path = require('path');
-var bodyParser = require('body-parser');
-var app = express();
-var mongoose = require('mongoose');
+const express = require('express'),
+Routes = require('./routes'),
+path = require('path'),
+bodyParser = require('body-parser'),
+mongoose = require('mongoose');
 
+const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../client'));

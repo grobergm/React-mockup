@@ -80,7 +80,9 @@ background-color: #222;
   color:black;
   width:18rem;
 }
-
+.pet{
+  width:18rem;
+}
 .vegi {
   font-family:'Roboto Mono';
 

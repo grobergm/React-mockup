@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Content from './Components/Content';
-import Views from './Components/Views';
-import Tab from './Components/Tab';
-import ContactTab from './Components/ContactTab';
+import ReactDOM from 'react-dom';
+import Content from './Content';
+import Views from './Views';
+import Tab from './Tab';
+import ContactTab from './ContactTab';
 import './App.css';
 
 
@@ -11,16 +12,16 @@ class App extends Component {
   constructor(props){
     super(props);
     this.text=this.text.bind(this);
-    this.projectsTab=this.projectsTab.bind(this);
-    this.servicesTab=this.servicesTab.bind(this);
-    this.contactTab=this.contactTab.bind(this);
+    this.api=this.api.bind(this);
+    this.database=this.database.bind(this);
+    this.contact=this.contact.bind(this);
     this.state=
     {tab:""};
   }
   text(){this.setState({tab:"Text"})}
-  projectsTab(){this.setState({tab:"Projects"})}
-  servicesTab(){this.setState({tab:"Services"})}
-  contactTab(){this.setState({tab:"Contact"})}
+  apiTab(){this.setState({tab:"API"})}
+  database(){this.setState({tab:"Database"})}
+  contact(){this.setState({tab:"Contact"})}
   render() {
     const blue="btn btn-lg btn-primary";
     const green="btn btn-lg btn-success";
@@ -31,12 +32,12 @@ class App extends Component {
         <header className="App-header">
           <span className="contactButton"><ContactTab changeTab={this.contactTab} tab={this.state.tab}/></span>
           <h1 className="App-title">Matt Groberg</h1>
-          <p className="App-intro"><span className="lineAround"><em>Web Developer</em></span></p>
+          <p className="App-intro"><span className="lineAround"><em>Web Development</em></span></p>
 
           <div id="tabs" className="btn-group">
             <Tab changeTab={this.text} tab={this.state.tab} name="Text" color={blue}/>
-            <Tab changeTab={this.servicesTab} tab={this.state.tab} name="Services" color={green}/>
-            <Tab changeTab={this.projectsTab} tab={this.state.tab} name="Projects" color={red}/>
+            <Tab changeTab={this.database} tab={this.state.tab} name="Database" color={green}/>
+            <Tab changeTab={this.api} tab={this.state.tab} name="API" color={red}/>
           </div>
         </header>
     <Views tab={this.state.tab}/>
